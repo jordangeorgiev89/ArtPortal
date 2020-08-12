@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:include="~{/fragments/head}"></th:block>
+
+
+<body>
+
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-md-12">
+                <th:block th:include="~{/fragments/navbar}"></th:block>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <div class="col-md-12">
+                    <div class="container">
+                        <form th:action="@{/register}" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username"
+                                        aria-describedby="helpId" placeholder="Username">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" id="email"
+                                        aria-describedby="helpId" placeholder="Email">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" name="password" id="password"
+                                        aria-describedby="helpId" placeholder="Password">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="description">Confirm Password</label>
+                                    <input type="text" class="form-control" name="confirmPassword" id="confirmPassword"
+                                        aria-describedby="helpId" placeholder="Confirm Password">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" name="firstName" id="firstName"
+                                        aria-describedby="helpId" placeholder="First Name">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName" id="lastName"
+                                        aria-describedby="helpId" placeholder="Last Name">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" class="form-control" name="country" id="country"
+                                        aria-describedby="helpId" placeholder="Country">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" class="form-control" name="city" id="city"
+                                        aria-describedby="helpId" placeholder="City">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="postcode">Postcode</label>
+                                    <input type="text" class="form-control" name="postCode" id="postcode"
+                                        aria-describedby="helpId" placeholder="Postcode">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control" name="street" id="street"
+                                        aria-describedby="helpId" placeholder="Street">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="streetNumber">Street Number</label>
+                                    <input type="text" class="form-control" name="streetNumb" id="streetNumber"
+                                        aria-describedby="helpId" placeholder="Street Number">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phoneNumber">Phone Number</label>
+                                    <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
+                                        aria-describedby="helpId" placeholder="Phone Number">
+                                    <small id="helpId" class="form-text text-muted">Help text</small>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary">Register Me</button>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <th:block th:include="~{/fragments/footer}"></th:block>
+</body>
+
+</html>
