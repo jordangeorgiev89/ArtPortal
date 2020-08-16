@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:include="~{/fragments/head}"></th:block>
 <body>
-<div class="container-fluid">
+<div class="container-fluid p-0">
     <div class="row">
         <div class="col-md-12">
             <th:block th:include="~{/fragments/navbar}"></th:block>
@@ -12,10 +12,58 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
             <th:block th:include="~{/fragments/left}"></th:block>
         </div>
+        <div class="col-md-9">
+
+        </div>
+        <!-- /.row -->
+
     </div>
+    <!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->
+
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+
+
+                <th:block th:each="pr : ${allProducts}">
+                    <div class="col-lg-2 col-md-4 mb-2">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title" th:text="${pr.getName()}"></h4>
+                                <h5 th:text="|${pr.getPrice().doubleValue()} BGN|"></h5>
+                                <p class="card-text" th:text="${pr.getDescription()}"></p>
+                            </div>
+
+                            <div class="card-footer">
+                                <!--                                <small class="text-muted">★ ★ ★ ★ ☆</small>-->
+                                <div>
+                                    <a class="btn btn-primary"
+                                       th:href="@{/user/buy/{productId}(productId = ${pr.getId()})}">BUY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+
+
+            </div>
+
+        </div>
+    </div>
+
 
 </div>
 <th:block th:include="~{/fragments/footer}"></th:block>

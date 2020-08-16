@@ -1,11 +1,6 @@
 package com.example.project_def.model.binding;
 
-import com.example.project_def.model.entity.Address;
-import com.example.project_def.model.entity.Product;
-import com.example.project_def.model.entity.URole;
-
-import java.util.List;
-import java.util.Set;
+import org.hibernate.validator.constraints.Length;
 
 public class UserRegisterBindingModel extends BaseBindingModel {
 
@@ -33,6 +28,7 @@ public class UserRegisterBindingModel extends BaseBindingModel {
         this.confirmPassword = confirmPassword;
     }
 
+    @Length(min = 2, max = 20, message = "Username must be between 2 and 20 characters")
     public String getUsername() {
         return username;
     }
@@ -41,6 +37,7 @@ public class UserRegisterBindingModel extends BaseBindingModel {
         this.username = username;
     }
 
+    @Length(min = 8, max = 20, message = "Password must be between 8 and 20 characters")
     public String getPassword() {
         return password;
     }

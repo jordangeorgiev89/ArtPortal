@@ -1,6 +1,6 @@
 /* Bootstrap correction */
 body {
-	background-image: url("http://asd.com/files/osc/101011010.png");
+	background-image: url("../img/101011010.png");
 	background-position: center;
 	background-repeat: repeat;
 	/*background-size: cover;*/
@@ -346,3 +346,6 @@ input:checked+.slider:before {
 }
 
  */
+
+
+

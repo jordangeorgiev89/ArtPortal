@@ -6,7 +6,7 @@
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-md-12">
                 <th:block th:include="~{/fragments/navbar}"></th:block>
@@ -23,33 +23,108 @@
 
                         <form th:action="@{/product-add}" method="POST">
 
-                            <div class="form-group">
-                                <label for="productName">Product Name</label>
-                                <input type="text" class="form-control" name="name" id="productName"
-                                    aria-describedby="helpId" placeholder="Product Name">
-                                <small id="helpId" class="form-text text-muted">Help text</small>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="genre">Genre</label>
-                                <input type="text" class="form-control" name="genre" id="genre"
-                                    aria-describedby="helpId" placeholder="Genre">
-                                <small id="helpId" class="form-text text-muted">Help text</small>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="released">Released</label>
-                                <input type="text" class="form-control" name="released" id="released"
-                                    aria-describedby="helpId" placeholder="Released">
-                                <small id="helpId" class="form-text text-muted">Help text</small>
-                            </div>
 
+
+                        
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" name="name" id="name"
+                                            aria-describedby="helpId" placeholder="Name">
+                                        <small id="helpId" class="form-text text-muted">Help text</small>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select class="form-control" name="categoryStr">
+                                        <option>Category</option>
+                                        <option th:each="cat : ${T(com.example.project_def.enums.CategoryName).values()}"
+                                                th:text="${cat.getName()}">
+                                        </option>
+                                    </select>
+                                    <small id="helpId" class="form-text text-muted">
+<!--                                        text -->
+                                    </small>
+                                </div>
+
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="make">Make</label>
+                                        <input type="text" class="form-control" name="make" id="make"
+                                            aria-describedby="helpId" placeholder="Make">
+                                        <small id="helpId" class="form-text text-muted">Help text</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="author">Author</label>
+                                        <input type="text" class="form-control" name="author" id="author"
+                                            aria-describedby="helpId" placeholder="Author">
+                                        <small id="helpId" class="form-text text-muted">Help text</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="text" class="form-control" name="price" id="price"
+                                            aria-describedby="helpId" placeholder="Price">
+                                        <small id="helpId" class="form-text text-muted">Help text</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="text" class="form-control" name="quantity" id="quantity"
+                                            aria-describedby="helpId" placeholder="Quantity">
+                                        <small id="helpId" class="form-text text-muted">Help text</small>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 <input type="text" class="form-control" name="description" id="description"
                                     aria-describedby="helpId" placeholder="Description">
                                 <small id="helpId" class="form-text text-muted">Help text</small>
                             </div>
+
+
+
+<!--  -->
+
+
+
+
+
+
+                        
+
+                         
+
+                   
+
+ 
+
+
+
+
+
+
+
+
+
 
                             <button type="submit" class="btn btn-primary">Product Add</button>
                         </form>

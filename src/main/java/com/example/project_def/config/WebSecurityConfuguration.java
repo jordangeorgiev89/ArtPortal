@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfuguration extends WebSecurityConfigurerAdapter {
 
     private static final String[] ENABLE_ADDRESSES
-            = {"/", "/about", "/lefttest", "/**/"};
+            = {"/", "/about", "/register", "/login", "/contact"};
     private static final String[] ENABLE_RESOURCES
             = {"/static/**", "/css/**", "/js/**", "/img/**"};
 
@@ -28,7 +28,7 @@ public class WebSecurityConfuguration extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/login").permitAll()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/")
                 .and()
                 .logout()
                  //.logoutUrl("/user/logout/")

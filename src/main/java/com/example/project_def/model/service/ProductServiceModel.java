@@ -1,12 +1,11 @@
-package com.example.project_def.model.entity;
+package com.example.project_def.model.service;
 
-import javax.persistence.*;
+import com.example.project_def.model.entity.Category;
+
 import java.math.BigDecimal;
 import java.util.List;
 
-@Entity
-@Table(name = "products")
-public class Product extends BaseEntity {
+public class ProductServiceModel extends BaseServiceModel {
 
     private String name;
     private String description;
@@ -16,30 +15,11 @@ public class Product extends BaseEntity {
     private int quantity;
     private List<String> imageUrls;;
     private Category category;
+    private String categoryStr;
 
-    public Product() {
+    public ProductServiceModel() {
     }
 
-    @Column(name = "author")
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-
-    @Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
@@ -48,7 +28,6 @@ public class Product extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "description", nullable = false, columnDefinition = "text")
     public String getDescription() {
         return description;
     }
@@ -57,7 +36,6 @@ public class Product extends BaseEntity {
         this.description = description;
     }
 
-    @Column(name = "make")
     public String getMake() {
         return make;
     }
@@ -66,7 +44,14 @@ public class Product extends BaseEntity {
         this.make = make;
     }
 
-    @Column(name = "price", nullable = false)
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
@@ -75,7 +60,6 @@ public class Product extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "quantity")
     public int getQuantity() {
         return quantity;
     }
@@ -84,8 +68,6 @@ public class Product extends BaseEntity {
         this.quantity = quantity;
     }
 
-    @Column(name = "image_urls")
-    @ElementCollection(targetClass = String.class)
     public List<String> getImageUrls() {
         return imageUrls;
     }
@@ -94,12 +76,19 @@ public class Product extends BaseEntity {
         this.imageUrls = imageUrls;
     }
 
-    /*@Column(name = "condition")
-	public String getCondition() {
-		return condition;
-	}
+    public Category getCategory() {
+        return category;
+    }
 
-	public void setCondition(String condition) {
-		this.condition = condition;
-	}*/
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getCategoryStr() {
+        return categoryStr;
+    }
+
+    public void setCategoryStr(String categoryStr) {
+        this.categoryStr = categoryStr;
+    }
 }

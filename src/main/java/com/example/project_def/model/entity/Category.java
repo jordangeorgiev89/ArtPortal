@@ -2,9 +2,7 @@ package com.example.project_def.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 
 @Entity
@@ -13,7 +11,7 @@ public class Category extends BaseEntity{
 
     private String name;
     private String description;
-    private List<Product> products;
+    //private List<Product> products;
 
     public Category() {
     }
@@ -23,14 +21,14 @@ public class Category extends BaseEntity{
         this.description = description;
     }
 
-    @OneToMany
+    /*@OneToMany
     public List<Product> getProducts() {
         return products;
     }
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
+    }*/
 
     @Column(name = "name", nullable = false, unique = true)
     public String getName() {

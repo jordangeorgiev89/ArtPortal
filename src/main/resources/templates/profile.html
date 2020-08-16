@@ -1,0 +1,263 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<th:block th:include="~{/fragments/head}"></th:block>-->
+
+<!--<body>-->
+
+<!--<div class="container-fluid p-0">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <th:block th:include="~{/fragments/navbar}"></th:block>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-3">-->
+<!--&lt;!&ndash;            <th:block th:include="~{/fragments/profile_menu}"></th:block>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="col-md-9 form-update-user">-->
+
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    <h4 class="h-pages">Update Profile</h4>-->
+<!--                    <hr>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <form th:action="@{/profile}" method="post" th:object="${uvm}">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>First name:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getFirstName()}" class="form-control"-->
+<!--                                                   placeholder="First Name" name="firstName" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="form-group row">-->
+<!--                                            <label>Last name:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getLastName()}" class="form-control"-->
+<!--                                                   placeholder="Last Name" name="lastName" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>Username:</label>-->
+<!--                                            <input disabled type="text" th:value="${uvm.getUsername()}" class="form-control"-->
+<!--                                                   placeholder="Username" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="forms-group row mr-1">-->
+<!--                                            <label>Email:</label>-->
+<!--                                            <input disabled type="text" th:value="${uvm.getEmail()}" class="form-control"-->
+<!--                                                   placeholder="Email" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="form-group row">-->
+<!--                                            <label>Phone number:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getPhoneNumber()}" class="form-control"-->
+<!--                                                   placeholder="phoneNumber" name="phoneNumber" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>Country:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getAddress().getCountry()}" class="form-control"-->
+<!--                                                   placeholder="Country" name="country" naria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>City:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getAddress().getCity()}" class="form-control"-->
+<!--                                                   placeholder="City" name="city" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-4">-->
+<!--                                        <div class="form-group row">-->
+<!--                                            <label>Post code:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getAddress().getPostCode()}" class="form-control"-->
+<!--                                                   placeholder="Post code" name="postCode" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-10">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>Street:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getAddress().getStreet()}" class="form-control"-->
+<!--                                                   placeholder="Street" name="street" naria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-2">-->
+<!--                                        <div class="form-group row">-->
+<!--                                            <label>Street number:</label>-->
+<!--                                            <input type="text" th:value="${uvm.getAddress().getStreetNumb()}" class="form-control"-->
+<!--                                                   placeholder="Street number" name="streetNumb" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="form-group row mr-1">-->
+<!--                                            <label>New password:</label>-->
+<!--                                            <input type="password"-->
+<!--                                                   class="form-control" name="password" placeholder="New Password"-->
+<!--                                                   aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <div class="form-group row">-->
+<!--                                            <label>Repeat new password:</label>-->
+<!--                                            <input type="password"-->
+<!--                                                   class="form-control" placeholder="Repeat new password"-->
+<!--                                                   name="confirmPassword" aria-describedby="helpId">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <button type="submit" class="bbs-1">Update Profile</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+
+<!--                &lt;!&ndash;-->
+
+<!--private String street;-->
+<!--private int streetNumb;-->
+<!--&ndash;&gt;-->
+
+
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--</body>-->
+<!--<th:block th:include="~{/fragments/footer}"></th:block>-->
+
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="~{/fragments/head}"></th:block>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <th:block th:include="~{/fragments/navbar}"></th:block>
+        </div>
+    </div>
+</div>
+<th:block th:object="${userToView}">
+    <div class="container m-4">
+        <div class="row">
+            <div class="col-md-3">
+                <th:block th:include="~{/fragments/profile_menu}"></th:block>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="h-pages">Your profile</h4>
+                        <hr>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div
+                                class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title h-pages">Profile Information</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class=" col-md-12 col-lg-12 ">
+                                            <table class="table table-user-information">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Username:</td>
+                                                    <td><span th:text="${uvm.getUsername()}"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>First Name:</td>
+                                                    <td><span th:text="${uvm.getFirstName()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Last Name:</td>
+                                                    <td><span th:text="${uvm.getLastName()}"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email:</td>
+                                                    <td><span th:text="${uvm.getEmail()}"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Phone:</td>
+                                                    <td><span th:text="${uvm.getPhoneNumber()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Country:</td>
+                                                    <td><span
+                                                            th:text="${uvm.getAddress().getCountry()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>City:</td>
+                                                    <td><span
+                                                            th:text="${uvm.getAddress().getCity()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Post Code:</td>
+                                                    <td><span
+                                                            th:text="${uvm.getAddress().getPostCode()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Street:</td>
+                                                    <td><span
+                                                            th:text="${uvm.getAddress().getStreet()}"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Street Number:</td>
+                                                    <td><span
+                                                            th:text="${uvm.getAddress().getStreetNumb()}"></span>
+                                                    </td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<th:block th:include="~{/fragments/footer}"></th:block>
+</body>
+
+</html>
